@@ -395,6 +395,9 @@ export default function transformProps(
         }
       : null,
     series,
+    textStyle: {
+      fontSize
+    }
   };
 
   return {

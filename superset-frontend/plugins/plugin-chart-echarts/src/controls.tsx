@@ -350,3 +350,15 @@ export const forceCategorical: ControlSetItem = {
     description: t('Make the x-axis categorical'),
   },
 };
+
+export const fontSizeControl: ControlSetItem = {
+  name: 'fontSize',
+  config: {
+    type: 'TextControl',
+    label: t('Font Size'),
+    renderTrigger: true,
+    isInt: true,
+    default: 12,
+    description: t('Font size for labels and legend text'),
+  },
+};
