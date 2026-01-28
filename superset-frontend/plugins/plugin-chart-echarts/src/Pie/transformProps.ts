@@ -159,6 +159,7 @@ export default function transformProps(
     sliceId,
     showTotal,
     roseType,
+    fontSize,
   }: EchartsPieFormData = {
     ...DEFAULT_LEGEND_FORM_DATA,
     ...DEFAULT_PIE_FORM_DATA,
@@ -396,8 +397,8 @@ export default function transformProps(
       : null,
     series,
     textStyle: {
-      fontSize
-    }
+      fontSize,
+    },
   };
 
   return {
