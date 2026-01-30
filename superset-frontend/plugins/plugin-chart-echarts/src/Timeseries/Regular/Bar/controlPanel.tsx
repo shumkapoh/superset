@@ -31,6 +31,7 @@ import {
 } from '@superset-ui/chart-controls';
 import {
   legendSection,
+  fontSizeControl,
   minorTicks,
   richTooltipSection,
   seriesOrderSection,
@@ -319,6 +320,7 @@ const config: ControlPanelConfig = {
       controlSetRows: [
         ...seriesOrderSection,
         ['color_scheme'],
+        [fontSizeControl],
         ['time_shift_color'],
         ...showValueSection,
         [minorTicks],

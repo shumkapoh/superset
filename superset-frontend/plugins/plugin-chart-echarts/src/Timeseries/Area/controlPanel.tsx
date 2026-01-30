@@ -31,6 +31,7 @@ import { EchartsTimeseriesSeriesType } from '../types';
 import { DEFAULT_FORM_DATA, TIME_SERIES_DESCRIPTION_TEXT } from '../constants';
 import {
   legendSection,
+  fontSizeControl,
   onlyTotalControl,
   showValueControl,
   richTooltipSection,
@@ -68,6 +69,7 @@ const config: ControlPanelConfig = {
       controlSetRows: [
         ...seriesOrderSection,
         ['color_scheme'],
+        [fontSizeControl],
         ['time_shift_color'],
         [
           {

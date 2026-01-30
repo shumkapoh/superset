@@ -94,6 +94,7 @@ export type EchartsTimeseriesFormData = QueryFormData & {
   showExtraControls: boolean;
   percentageThreshold: number;
   orientation?: OrientationType;
+  fontSize: number;
 } & LegendFormData &
   TitleFormData;
 
@@ -111,6 +112,7 @@ export type TimeseriesChartTransformedProps =
       xAxis: {
         label: string;
         type: AxisType;
+        fontSize?: number;
       };
       onFocusedSeries: (series: string | null) => void;
     };

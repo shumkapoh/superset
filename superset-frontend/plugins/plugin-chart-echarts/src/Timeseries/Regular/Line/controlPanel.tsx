@@ -34,6 +34,7 @@ import {
 } from '../../constants';
 import {
   legendSection,
+  fontSizeControl,
   minorTicks,
   richTooltipSection,
   seriesOrderSection,
@@ -69,6 +70,7 @@ const config: ControlPanelConfig = {
       controlSetRows: [
         ...seriesOrderSection,
         ['color_scheme'],
+        [fontSizeControl],
         ['time_shift_color'],
         [
           {

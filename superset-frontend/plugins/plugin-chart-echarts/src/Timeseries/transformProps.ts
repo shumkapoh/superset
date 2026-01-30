@@ -192,6 +192,7 @@ export default function transformProps(
     yAxisTitleMargin,
     yAxisTitlePosition,
     zoomable,
+    fontSize,
   }: EchartsTimeseriesFormData = { ...DEFAULT_FORM_DATA, ...formData };
   const refs: Refs = {};
   const groupBy = ensureIsArray(groupby);
@@ -487,6 +488,7 @@ export default function transformProps(
       hideOverlap: true,
       formatter: xAxisFormatter,
       rotate: xAxisLabelRotation,
+      fontSize,
     },
     minorTick: { show: minorTicks },
     minInterval:
@@ -519,6 +521,7 @@ export default function transformProps(
         defaultFormatter,
         yAxisFormat,
       ),
+      fontSize,
     },
     scale: truncateYAxis,
     name: yAxisTitle,
@@ -667,6 +670,7 @@ export default function transformProps(
           },
         ]
       : [],
+    ...(fontSize ? { textStyle: { fontSize } } : {}),
   };
 
   const onFocusedSeries = (seriesName: string | null) => {
