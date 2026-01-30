@@ -128,6 +128,7 @@ export default function transformProps(chartProps: EchartsBubbleChartProps) {
     legendMargin,
     legendType,
     sliceId,
+    fontSize,
   }: EchartsBubbleFormData = { ...DEFAULT_FORM_DATA, ...formData };
   const colorFn = CategoricalColorNamespace.getScale(colorScheme as string);
 
@@ -190,7 +191,7 @@ export default function transformProps(chartProps: EchartsBubbleChartProps) {
   const echartOptions: EChartsCoreOption = {
     series,
     xAxis: {
-      axisLabel: { formatter: xAxisFormatter },
+      axisLabel: { formatter: xAxisFormatter, fontSize },
       splitLine: {
         lineStyle: {
           type: 'dashed',
@@ -208,7 +209,7 @@ export default function transformProps(chartProps: EchartsBubbleChartProps) {
       ...getMinAndMaxFromBounds(xAxisType, truncateXAxis, xAxisMin, xAxisMax),
     },
     yAxis: {
-      axisLabel: { formatter: yAxisFormatter },
+      axisLabel: { formatter: yAxisFormatter, fontSize },
       splitLine: {
         lineStyle: {
           type: 'dashed',
@@ -245,6 +246,7 @@ export default function transformProps(chartProps: EchartsBubbleChartProps) {
         ),
     },
     grid: { ...defaultGrid, ...padding },
+    textStyle: { fontSize },
   };
 
   const { onContextMenu, setDataMask = () => {} } = hooks;

@@ -45,6 +45,7 @@ export type EchartsBubbleFormData = QueryFormData &
     tooltipFormat: string;
     x: string;
     y: string;
+    fontSize?: number;
   };
 
 export interface EchartsBubbleChartProps

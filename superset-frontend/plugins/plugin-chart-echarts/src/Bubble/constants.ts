@@ -33,6 +33,7 @@ export const DEFAULT_FORM_DATA: Partial<EchartsBubbleFormData> = {
   yAxisBounds: [null, null],
   xAxisLabelRotation: defaultXAxis.xAxisLabelRotation,
   opacity: 0.6,
+  fontSize: 12,
 };
 
 export const MINIMUM_BUBBLE_SIZE = 5;
