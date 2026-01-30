@@ -63,7 +63,7 @@ export default function transformProps(
     xAxisTitle,
     yAxisTitle,
     yAxisFormat,
-    fontSize = 12,
+    fontSize,
   } = formData;
   const { data } = queriesData[0];
   const colorFn = CategoricalColorNamespace.getScale(colorScheme);
