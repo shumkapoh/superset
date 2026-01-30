@@ -36,7 +36,7 @@ import {
 } from '@superset-ui/chart-controls';
 import { DEFAULT_FORM_DATA } from './types';
 import { LABEL_POSITION } from '../constants';
-import { legendSection } from '../controls';
+import { legendSection, fontSizeControl } from '../controls';
 
 const { labelType, labelPosition, numberFormat, showLabels, isCircle } =
   DEFAULT_FORM_DATA;
@@ -98,6 +98,7 @@ const config: ControlPanelConfig = {
       expanded: true,
       controlSetRows: [
         ['color_scheme'],
+        [fontSizeControl],
         ...legendSection,
         [<ControlSubSectionHeader>{t('Labels')}</ControlSubSectionHeader>],
         [

@@ -103,6 +103,7 @@ export default function transformProps(
     isCircle,
     columnConfig,
     sliceId,
+    fontSize,
   }: EchartsRadarFormData = {
     ...DEFAULT_LEGEND_FORM_DATA,
     ...DEFAULT_RADAR_FORM_DATA,
@@ -272,6 +273,7 @@ export default function transformProps(
       ...getLegendProps(legendType, legendOrientation, showLegend, theme),
       data: Array.from(columnsLabelMap.keys()),
     },
+    ...(fontSize ? { textStyle: { fontSize } } : {}),
     series,
     radar: {
       shape: isCircle ? 'circle' : 'polygon',

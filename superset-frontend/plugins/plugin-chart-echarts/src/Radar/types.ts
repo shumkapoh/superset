@@ -53,6 +53,7 @@ export type EchartsRadarFormData = QueryFormData &
     isCircle: boolean;
     numberFormat: string;
     dateFormat: string;
+    fontSize: number;
   };
 
 export enum EchartsRadarLabelType {
@@ -77,6 +78,7 @@ export const DEFAULT_FORM_DATA: EchartsRadarFormData = {
   showLabels: true,
   dateFormat: 'smart_date',
   isCircle: false,
+  fontSize: 12,
 };
 
 export type RadarChartTransformedProps =
