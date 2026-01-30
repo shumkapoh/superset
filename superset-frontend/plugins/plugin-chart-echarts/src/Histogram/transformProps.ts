@@ -63,6 +63,7 @@ export default function transformProps(
     xAxisTitle,
     yAxisTitle,
     yAxisFormat,
+    fontSize = 12,
   } = formData;
   const { data } = queriesData[0];
   const colorFn = CategoricalColorNamespace.getScale(colorScheme);
@@ -166,6 +167,9 @@ export default function transformProps(
       nameGap: 35,
       type: 'category',
       nameLocation: 'middle',
+      axisLabel: {
+        fontSize,
+      },
     },
     yAxis: {
       ...defaultYAxis,
@@ -175,6 +179,7 @@ export default function transformProps(
       nameLocation: 'middle',
       axisLabel: {
         formatter: (value: number) => yAxisFormatter.format(value),
+        fontSize,
       },
     },
     series: barSeries,
@@ -193,6 +198,9 @@ export default function transformProps(
       ...getDefaultTooltip(refs),
       trigger: 'axis',
       formatter: tooltipFormatter,
+    },
+    textStyle: {
+      fontSize,
     },
   };
 
