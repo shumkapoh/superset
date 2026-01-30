@@ -206,6 +206,7 @@ export default function transformProps(
     percentageThreshold,
     metrics = [],
     metricsB = [],
+    fontSize,
   }: EchartsMixedTimeseriesFormData = { ...DEFAULT_FORM_DATA, ...formData };
 
   const refs: Refs = {};
@@ -514,6 +515,7 @@ export default function transformProps(
       axisLabel: {
         formatter: xAxisFormatter,
         rotate: xAxisLabelRotation,
+        fontSize,
       },
       minorTick: { show: minorTicks },
       minInterval:
@@ -549,6 +551,7 @@ export default function transformProps(
             formatter,
             yAxisFormat,
           ),
+          fontSize,
         },
         scale: truncateYAxis,
         name: yAxisTitle,
@@ -572,6 +575,7 @@ export default function transformProps(
             formatterSecondary,
             yAxisFormatSecondary,
           ),
+          fontSize,
         },
         scale: truncateYAxis,
         name: yAxisTitleSecondary,
@@ -689,6 +693,9 @@ export default function transformProps(
           },
         ]
       : [],
+    textStyle: {
+      fontSize,
+    },
   };
 
   const onFocusedSeries = (seriesName: string | null) => {

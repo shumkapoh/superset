@@ -33,6 +33,7 @@ import { DEFAULT_FORM_DATA } from './types';
 import { EchartsTimeseriesSeriesType } from '../Timeseries/types';
 import {
   legendSection,
+  fontSizeControl,
   minorTicks,
   richTooltipSection,
   truncateXAxis,
@@ -299,6 +300,7 @@ const config: ControlPanelConfig = {
       expanded: true,
       controlSetRows: [
         ['color_scheme'],
+        [fontSizeControl],
         ['time_shift_color'],
         ...createCustomizeSection(t('Query A'), ''),
         ...createCustomizeSection(t('Query B'), 'B'),
