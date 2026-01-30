@@ -362,3 +362,15 @@ export const fontSizeControl: ControlSetItem = {
     description: t(`Font size for labels and legend text`),
   },
 };
+
+export const fontSizeControlWithAxis = fontSizeControl;
+
+if (
+  fontSizeControlWithAxis &&
+  typeof fontSizeControlWithAxis === 'object' &&
+  'config' in fontSizeControlWithAxis
+) {
+  fontSizeControlWithAxis.config.description = t(
+    'Font size for labels, legend & axis text',
+  );
+}

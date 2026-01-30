@@ -25,19 +25,7 @@ import {
   formatSelectOptions,
   sharedControls,
 } from '@superset-ui/chart-controls';
-import { showValueControl, fontSizeControl } from '../controls';
-
-const fontSizeControlRow = fontSizeControl;
-
-if (
-  fontSizeControl &&
-  typeof fontSizeControl === 'object' &&
-  'config' in fontSizeControl
-) {
-  fontSizeControl.config.description = t(
-    'Font size for labels, legend & axis text',
-  );
-}
+import { showValueControl, fontSizeControlWithAxis } from '../controls';
 
 const config: ControlPanelConfig = {
   controlPanelSections: [
@@ -70,7 +58,7 @@ const config: ControlPanelConfig = {
             },
           },
         ],
-        [fontSizeControlRow],
+        [fontSizeControlWithAxis],
         [
           <ControlSubSectionHeader>
             {t('Series colors')}
