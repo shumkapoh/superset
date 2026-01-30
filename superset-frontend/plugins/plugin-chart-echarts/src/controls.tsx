@@ -359,8 +359,6 @@ export const fontSizeControl: ControlSetItem = {
     renderTrigger: true,
     isInt: true,
     default: 12,
-    description: t(
-      `Font size for labels and legend text. Currently support number, "px", "em" & "rem"`,
-    ),
+    description: t(`Font size for labels and legend text`),
   },
 };
