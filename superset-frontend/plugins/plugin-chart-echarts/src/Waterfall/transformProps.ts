@@ -421,6 +421,9 @@ export default function transformProps(
       show: showLegend,
       selected: legendState,
       data: [LEGEND.INCREASE, LEGEND.DECREASE, LEGEND.TOTAL],
+      textStyle: {
+        fontSize,
+      },
     },
     xAxis: {
       data: xAxisData,
@@ -440,7 +443,7 @@ export default function transformProps(
       },
       nameLocation: 'middle',
       name: yAxisLabel,
-      axisLabel: { formatter: defaultFormatter },
+      axisLabel: { ...axisLabel, formatter: defaultFormatter },
     },
     tooltip: {
       ...getDefaultTooltip(refs),
