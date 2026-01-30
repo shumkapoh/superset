@@ -57,10 +57,12 @@ export type EchartsWaterfallFormData = QueryFormData &
     xTicksLayout?: WaterfallFormXTicksLayout;
     yAxisLabel: string;
     yAxisFormat: string;
+    fontSize: number;
   };
 
 export const DEFAULT_FORM_DATA: Partial<EchartsWaterfallFormData> = {
   showLegend: true,
+  fontSize: 12,
 };
 
 export interface EchartsWaterfallChartProps extends ChartProps {

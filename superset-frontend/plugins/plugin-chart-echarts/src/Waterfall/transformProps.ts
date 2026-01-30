@@ -179,6 +179,7 @@ export default function transformProps(
     xAxisLabel,
     yAxisFormat,
     showValue,
+    fontSize,
   } = formData;
   const defaultFormatter = currencyFormat?.symbol
     ? new CurrencyFormatter({ d3Format: yAxisFormat, currency: currencyFormat })
@@ -333,6 +334,7 @@ export default function transformProps(
     hideOverlap?: boolean;
     show?: boolean;
     formatter?: typeof xAxisFormatter;
+    fontSize?: number;
   };
   if (xTicksLayout === '45°') {
     axisLabel = { rotate: -45 };
@@ -347,6 +349,7 @@ export default function transformProps(
   }
   axisLabel.formatter = xAxisFormatter;
   axisLabel.hideOverlap = false;
+  axisLabel.fontSize = fontSize;
 
   const seriesProps: Pick<BarSeriesOption, 'type' | 'stack' | 'emphasis'> = {
     type: 'bar',
@@ -369,6 +372,7 @@ export default function transformProps(
         show: showValue,
         position: 'top',
         formatter: seriesformatter,
+        fontSize,
       },
       itemStyle: {
         color: rgbToHex(increaseColor.r, increaseColor.g, increaseColor.b),
@@ -382,6 +386,7 @@ export default function transformProps(
         show: showValue,
         position: 'bottom',
         formatter: seriesformatter,
+        fontSize,
       },
       itemStyle: {
         color: rgbToHex(decreaseColor.r, decreaseColor.g, decreaseColor.b),
@@ -395,6 +400,7 @@ export default function transformProps(
         show: showValue,
         position: 'top',
         formatter: seriesformatter,
+        fontSize,
       },
       itemStyle: {
         color: rgbToHex(totalColor.r, totalColor.g, totalColor.b),
