@@ -32,7 +32,7 @@ import {
   EchartsFunnelLabelTypeType,
   PercentCalcType,
 } from './types';
-import { legendSection } from '../controls';
+import { legendSection, fontSizeControl } from '../controls';
 
 const { labelType, numberFormat, showLabels, defaultTooltipLabel } =
   DEFAULT_FORM_DATA;
@@ -96,6 +96,7 @@ const config: ControlPanelConfig = {
       expanded: true,
       controlSetRows: [
         ['color_scheme'],
+        [fontSizeControl],
         ...funnelLegendSection,
         // eslint-disable-next-line react/jsx-key
         [<ControlSubSectionHeader>{t('Labels')}</ControlSubSectionHeader>],

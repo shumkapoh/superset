@@ -121,6 +121,7 @@ export default function transformProps(
     showLegend,
     sliceId,
     percentCalculationType,
+    fontSize,
   }: EchartsFunnelFormData = {
     ...DEFAULT_LEGEND_FORM_DATA,
     ...DEFAULT_FUNNEL_FORM_DATA,
@@ -292,6 +293,7 @@ export default function transformProps(
       data: keys,
     },
     series,
+    textStyle: { fontSize },
   };
 
   return {

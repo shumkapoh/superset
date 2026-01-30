@@ -43,6 +43,7 @@ export type EchartsFunnelFormData = QueryFormData &
     sort: 'descending' | 'ascending' | 'none' | undefined;
     orient: 'vertical' | 'horizontal' | undefined;
     percentCalculationType: PercentCalcType;
+    fontSize?: number;
   };
 
 export enum EchartsFunnelLabelTypeType {
@@ -74,6 +75,7 @@ export const DEFAULT_FORM_DATA: EchartsFunnelFormData = {
   sort: 'descending',
   orient: 'vertical',
   gap: 0,
+  fontSize: 12,
 };
 
 export type FunnelChartTransformedProps =
