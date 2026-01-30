@@ -95,6 +95,7 @@ export default function transformProps(
     yAxisFormat,
     xAxisTimeFormat,
     currencyFormat,
+    fontSize,
   } = formData;
   const metricLabel = getMetricLabel(metric);
   const xAxisLabel = getColumnLabel(xAxis);
@@ -232,6 +233,7 @@ export default function transformProps(
       axisLabel: {
         formatter: xAxisFormatter,
         interval: xscaleInterval === -1 ? 'auto' : xscaleInterval - 1,
+        fontSize,
       },
     },
     yAxis: {
@@ -239,8 +241,10 @@ export default function transformProps(
       axisLabel: {
         formatter: yAxisFormatter,
         interval: yscaleInterval === -1 ? 'auto' : yscaleInterval - 1,
+        fontSize,
       },
     },
+    textStyle: { fontSize },
   };
   return {
     refs,

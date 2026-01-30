@@ -22,6 +22,7 @@ import {
   formatSelectOptionsForRange,
   getStandardizedControls,
 } from '@superset-ui/chart-controls';
+import { fontSizeControl } from '../controls';
 
 const sortAxisChoices = [
   ['alpha_asc', t('Axis ascending')],
@@ -123,6 +124,7 @@ const config: ControlPanelConfig = {
           },
         ],
         ['linear_color_scheme'],
+        [fontSizeControl],
         [
           {
             name: 'xscale_interval',

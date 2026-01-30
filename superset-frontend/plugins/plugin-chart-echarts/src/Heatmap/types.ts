@@ -44,6 +44,7 @@ export interface HeatmapFormData extends QueryFormData {
   valueBounds: [number | undefined | null, number | undefined | null];
   yAxisFormat?: string;
   yscaleInterval: number;
+  fontSize?: number;
 }
 
 export interface HeatmapChartProps extends BaseChartProps<HeatmapFormData> {
