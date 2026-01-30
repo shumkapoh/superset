@@ -51,6 +51,7 @@ export type EchartsGraphFormData = QueryFormData &
     edgeLength: number;
     edgeSymbol: string;
     friction: number;
+    fontSize: number;
   };
 
 export type EChartGraphNode = Omit<GraphNodeItemOption, 'value'> & {
@@ -78,6 +79,7 @@ export const DEFAULT_FORM_DATA: EchartsGraphFormData = {
   friction: 0.2,
   legendOrientation: LegendOrientation.Top,
   legendType: LegendType.Scroll,
+  fontSize: 12,
 };
 
 export type tooltipFormatParams = {

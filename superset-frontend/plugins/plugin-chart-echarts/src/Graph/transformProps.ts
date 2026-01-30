@@ -193,6 +193,7 @@ export default function transformProps(
     baseNodeSize,
     edgeSymbol,
     sliceId,
+    fontSize,
   }: EchartsGraphFormData = { ...DEFAULT_GRAPH_FORM_DATA, ...formData };
 
   const refs: Refs = {};
@@ -353,6 +354,7 @@ export default function transformProps(
       data: categoryList,
     },
     series,
+    textStyle: { fontSize },
   };
 
   const { onContextMenu, setDataMask } = hooks;
