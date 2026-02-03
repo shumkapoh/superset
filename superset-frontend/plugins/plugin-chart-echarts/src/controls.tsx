@@ -22,6 +22,7 @@ import {
   ControlSetItem,
   ControlSetRow,
   ControlSubSectionHeader,
+  CustomControlItem,
   DEFAULT_SORT_SERIES_DATA,
   SORT_SERIES_CHOICES,
   sharedControls,
@@ -359,18 +360,6 @@ export const fontSizeControl: ControlSetItem = {
     renderTrigger: true,
     isInt: true,
     default: 12,
-    description: t(`Font size for labels and legend text`),
+    description: t(`Font size for text`),
   },
 };
-
-export const fontSizeControlWithAxis = fontSizeControl;
-
-if (
-  fontSizeControlWithAxis &&
-  typeof fontSizeControlWithAxis === 'object' &&
-  'config' in fontSizeControlWithAxis
-) {
-  fontSizeControlWithAxis.config.description = t(
-    'Font size for labels, legend & axis text',
-  );
-}

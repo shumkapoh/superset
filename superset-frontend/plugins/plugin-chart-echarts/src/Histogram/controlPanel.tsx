@@ -34,7 +34,7 @@ import {
 import {
   showLegendControl,
   showValueControl,
-  fontSizeControlWithAxis,
+  fontSizeControl,
 } from '../controls';
 
 const config: ControlPanelConfig = {
@@ -116,7 +116,7 @@ const config: ControlPanelConfig = {
       expanded: true,
       controlSetRows: [
         ['color_scheme'],
-        [fontSizeControlWithAxis],
+        [fontSizeControl],
         [showValueControl],
         [showLegendControl],
         [

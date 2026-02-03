@@ -25,7 +25,7 @@ import {
   formatSelectOptions,
   sharedControls,
 } from '@superset-ui/chart-controls';
-import { showValueControl, fontSizeControlWithAxis } from '../controls';
+import { showValueControl, fontSizeControl } from '../controls';
 
 const config: ControlPanelConfig = {
   controlPanelSections: [
@@ -58,7 +58,7 @@ const config: ControlPanelConfig = {
             },
           },
         ],
-        [fontSizeControlWithAxis],
+        [fontSizeControl],
         [
           <ControlSubSectionHeader>
             {t('Series colors')}
