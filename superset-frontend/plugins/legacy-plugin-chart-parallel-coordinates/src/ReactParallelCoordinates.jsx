@@ -32,8 +32,19 @@ ParallelCoordinates.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
+ParallelCoordinates.defaultProps = {
+  fontSize: 12,
+};
+
 export default styled(ParallelCoordinates)`
-  ${({ theme }) => `
+  ${({ theme, formData }) => {
+    const base =
+      formData && typeof formData.fontSize !== 'undefined'
+        ? formData.fontSize
+        : theme.typography.sizes.s;
+    const fontSize =
+      typeof base === 'number' ? `${base}px` : String(base);
+    return `
     .superset-legacy-chart-parallel-coordinates {
       div.grid {
         overflow: auto;
@@ -46,7 +57,7 @@ export default styled(ParallelCoordinates)`
     }
     .parcoords svg,
     .parcoords canvas {
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${fontSize};
       position: absolute;
     }
     .parcoords > canvas {
@@ -55,7 +66,7 @@ export default styled(ParallelCoordinates)`
 
     .parcoords text.label {
       font: 100%;
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${fontSize};
       cursor: drag;
     }
     .parcoords rect.background {
@@ -100,7 +111,7 @@ export default styled(ParallelCoordinates)`
     .parcoords .row,
     .parcoords .header {
       clear: left;
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${fontSize};
       line-height: 18px;
       height: 18px;
       margin: 0px;
@@ -121,5 +132,6 @@ export default styled(ParallelCoordinates)`
     .parcoords .col-0 {
       width: 180px;
     }
-  `}
+  `;
+  }}
 `;

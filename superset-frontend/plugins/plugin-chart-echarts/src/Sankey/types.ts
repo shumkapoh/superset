@@ -28,6 +28,7 @@ export type SankeyFormData = QueryFormData & {
   metric: QueryFormMetric;
   source: QueryFormColumn;
   target: QueryFormColumn;
+  fontSize?: number;
 };
 
 export interface SankeyChartProps extends BaseChartProps<SankeyFormData> {

@@ -30,6 +30,7 @@ export type BoxPlotQueryFormData = QueryFormData & {
   numberFormat?: string;
   whiskerOptions?: BoxPlotFormDataWhiskerOptions;
   xTickLayout?: BoxPlotFormXTickLayout;
+  fontSize: number;
 } & TitleFormData;
 
 export type BoxPlotFormDataWhiskerOptions =
@@ -48,6 +49,7 @@ export type BoxPlotFormXTickLayout =
 // @ts-ignore
 export const DEFAULT_FORM_DATA: BoxPlotQueryFormData = {
   ...DEFAULT_TITLE_FORM_DATA,
+  fontSize: 12,
 };
 
 export interface EchartsBoxPlotChartProps

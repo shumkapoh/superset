@@ -28,7 +28,16 @@ const CountryMap = ({ className, ...otherProps }) => (
 );
 
 export default styled(CountryMap)`
-  ${({ theme }) => `
+  ${({ theme, formData }) => {
+    const base =
+      formData && typeof formData.fontSize !== 'undefined'
+        ? formData.fontSize
+        : theme.typography.sizes.m;
+    const basePx =
+      typeof base === 'number' ? `${base}px` : String(base);
+    const bigPx =
+      typeof base === 'number' ? `${base * 1.5}px` : basePx;
+    return `
     .superset-legacy-chart-country-map svg {
       background-color: ${theme.colors.grayscale.light5};
     }
@@ -59,17 +68,18 @@ export default styled(CountryMap)`
 
     .superset-legacy-chart-country-map text.result-text {
       font-weight: ${theme.typography.weights.light};
-      font-size: ${theme.typography.sizes.xl}px;
+      font-size: ${basePx};
     }
 
     .superset-legacy-chart-country-map text.big-text {
       font-weight: ${theme.typography.weights.bold};
-      font-size: ${theme.typography.sizes.l}px;
+      font-size: ${bigPx};
     }
 
     .superset-legacy-chart-country-map path.region {
       cursor: pointer;
       stroke: ${theme.colors.grayscale.light2};
     }
-  `}
+  `;
+  }}
 `;

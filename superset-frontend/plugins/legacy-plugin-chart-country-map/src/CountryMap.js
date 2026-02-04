@@ -41,6 +41,7 @@ const propTypes = {
   linearColorScheme: PropTypes.string,
   mapBaseUrl: PropTypes.string,
   numberFormat: PropTypes.string,
+  fontSize: PropTypes.number,
 };
 
 const maps = {};
@@ -55,6 +56,7 @@ function CountryMap(element, props) {
     numberFormat,
     colorScheme,
     sliceId,
+    fontSize,
   } = props;
 
   const container = element;
@@ -137,14 +139,18 @@ function CountryMap(element, props) {
       .transition()
       .duration(750)
       .style('opacity', 1);
+    const baseFont =
+      typeof fontSize === 'number' && fontSize > 0 ? fontSize : 16;
+    const bigSize = hasCenter ? baseFont * 0.5 : baseFont;
+    const resultSize = hasCenter ? baseFont : baseFont * 1.5;
     bigText
       .transition()
       .duration(750)
-      .style('font-size', hasCenter ? 6 : 16);
+      .style('font-size', `${bigSize}px`);
     resultText
       .transition()
       .duration(750)
-      .style('font-size', hasCenter ? 16 : 24);
+      .style('font-size', `${resultSize}px`);
   };
 
   backgroundRect.on('click', clicked);
@@ -251,5 +257,8 @@ function CountryMap(element, props) {
 
 CountryMap.displayName = 'CountryMap';
 CountryMap.propTypes = propTypes;
+CountryMap.defaultProps = {
+  fontSize: 12,
+};
 
 export default CountryMap;

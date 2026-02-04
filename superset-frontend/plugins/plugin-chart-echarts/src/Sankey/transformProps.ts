@@ -41,7 +41,14 @@ export default function transformProps(
   const refs: Refs = {};
   const { formData, height, hooks, queriesData, width } = chartProps;
   const { onLegendStateChanged } = hooks;
-  const { colorScheme, metric, source, target, sliceId } = formData;
+  const {
+    colorScheme,
+    metric,
+    source,
+    target,
+    sliceId,
+    fontSize = 12,
+  } = formData;
   const { data } = queriesData[0];
   const colorFn = CategoricalColorNamespace.getScale(colorScheme);
   const metricLabel = getMetricLabel(metric);
@@ -113,6 +120,9 @@ export default function transformProps(
   };
 
   const echartOptions: EChartsOption = {
+    textStyle: {
+      fontSize,
+    },
     series: {
       animation: false,
       data: seriesData,

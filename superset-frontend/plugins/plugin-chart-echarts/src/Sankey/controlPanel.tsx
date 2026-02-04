@@ -21,6 +21,7 @@ import {
   ControlPanelConfig,
   dndGroupByControl,
 } from '@superset-ui/chart-controls';
+import { fontSizeControl } from '../controls';
 
 const config: ControlPanelConfig = {
   controlPanelSections: [
@@ -67,7 +68,7 @@ const config: ControlPanelConfig = {
     {
       label: t('Chart Options'),
       expanded: true,
-      controlSetRows: [['color_scheme']],
+      controlSetRows: [['color_scheme'], [fontSizeControl]],
     },
   ],
 };

@@ -73,6 +73,7 @@ export default function transformProps(
     yAxisTitleMargin,
     yAxisTitlePosition,
     sliceId,
+    fontSize,
   } = formData as BoxPlotQueryFormData;
   const refs: Refs = {};
   const colorFn = CategoricalColorNamespace.getScale(colorScheme as string);
@@ -193,6 +194,8 @@ export default function transformProps(
   else if (xTicksLayout === 'staggered') axisLabel = { rotate: -45 };
   else axisLabel = { show: true };
 
+  axisLabel = { ...axisLabel, fontSize };
+
   const series: BoxplotSeriesOption[] = [
     {
       name: 'boxplot',
@@ -270,7 +273,7 @@ export default function transformProps(
     yAxis: {
       ...defaultYAxis,
       type: 'value',
-      axisLabel: { formatter: numberFormatter },
+      axisLabel: { formatter: numberFormatter, fontSize },
       name: yAxisTitle,
       nameGap: convertInteger(yAxisTitleMargin),
       nameLocation: yAxisTitlePosition === 'Left' ? 'middle' : 'end',

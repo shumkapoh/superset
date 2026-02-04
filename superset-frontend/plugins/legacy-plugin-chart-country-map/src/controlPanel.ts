@@ -69,6 +69,19 @@ const config: ControlPanelConfig = {
           },
         ],
         ['linear_color_scheme'],
+        [
+          {
+            name: 'fontSize',
+            config: {
+              type: 'TextControl',
+              label: t('Font Size'),
+              renderTrigger: true,
+              isInt: true,
+              default: 12,
+              description: t('Font size for text'),
+            },
+          },
+        ],
       ],
     },
   ],

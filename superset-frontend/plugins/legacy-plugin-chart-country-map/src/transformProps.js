@@ -24,6 +24,7 @@ export default function transformProps(chartProps) {
     selectCountry,
     colorScheme,
     sliceId,
+    fontSize,
   } = formData;
 
   return {
@@ -35,5 +36,6 @@ export default function transformProps(chartProps) {
     numberFormat,
     colorScheme,
     sliceId,
+    fontSize,
   };
 }

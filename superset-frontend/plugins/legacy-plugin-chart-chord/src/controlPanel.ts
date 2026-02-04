@@ -39,7 +39,23 @@ const config: ControlPanelConfig = {
     {
       label: t('Chart Options'),
       expanded: true,
-      controlSetRows: [['y_axis_format', null], ['color_scheme']],
+      controlSetRows: [
+        ['y_axis_format', null],
+        ['color_scheme'],
+        [
+          {
+            name: 'fontSize',
+            config: {
+              type: 'TextControl',
+              label: t('Font Size'),
+              renderTrigger: true,
+              isInt: true,
+              default: 12,
+              description: t('Font size for chord labels'),
+            },
+          },
+        ],
+      ],
     },
   ],
   controlOverrides: {

@@ -33,10 +33,19 @@ const propTypes = {
   height: PropTypes.number,
   colorScheme: PropTypes.string,
   numberFormat: PropTypes.string,
+  fontSize: PropTypes.number,
 };
 
 function Chord(element, props) {
-  const { data, width, height, numberFormat, colorScheme, sliceId } = props;
+  const {
+    data,
+    width,
+    height,
+    numberFormat,
+    colorScheme,
+    sliceId,
+    fontSize,
+  } = props;
 
   element.innerHTML = '';
 
@@ -98,6 +107,12 @@ function Chord(element, props) {
   // Add a text label.
   const groupText = group.append('text').attr('x', 6).attr('dy', 15);
 
+  if (fontSize) {
+    const fontSizePx =
+      typeof fontSize === 'number' ? `${fontSize}px` : String(fontSize);
+    groupText.style('font-size', fontSizePx);
+  }
+
   groupText
     .append('textPath')
     .attr('xlink:href', (d, i) => `#group${i}`)
@@ -139,5 +154,8 @@ function Chord(element, props) {
 
 Chord.displayName = 'Chord';
 Chord.propTypes = propTypes;
+Chord.defaultProps = {
+  fontSize: 12,
+};
 
 export default Chord;

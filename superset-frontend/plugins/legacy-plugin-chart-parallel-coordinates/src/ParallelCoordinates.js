@@ -35,6 +35,7 @@ const propTypes = {
   metrics: PropTypes.arrayOf(PropTypes.string),
   series: PropTypes.string,
   showDatatable: PropTypes.bool,
+  fontSize: PropTypes.number,
 };
 
 function ParallelCoordinates(element, props) {
@@ -48,7 +49,14 @@ function ParallelCoordinates(element, props) {
     metrics,
     series,
     showDatatable,
+    fontSize,
   } = props;
+
+  if (fontSize) {
+    const fontSizePx =
+      typeof fontSize === 'number' ? `${fontSize}px` : String(fontSize);
+    d3.select('.parcoords text.label').style('font-size', fontSizePx);
+  }
 
   const cols = includeSeries ? [series].concat(metrics) : metrics;
 

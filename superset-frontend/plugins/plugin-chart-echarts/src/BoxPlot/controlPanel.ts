@@ -36,6 +36,7 @@ import {
   getTemporalColumns,
   sharedControls,
 } from '@superset-ui/chart-controls';
+import { fontSizeControl } from '../controls';
 
 const config: ControlPanelConfig = {
   controlPanelSections: [
@@ -107,6 +108,7 @@ const config: ControlPanelConfig = {
       expanded: true,
       controlSetRows: [
         ['color_scheme'],
+        [fontSizeControl],
         [
           {
             name: 'x_ticks_layout',
