@@ -22,7 +22,6 @@ import {
   ControlSetItem,
   ControlSetRow,
   ControlSubSectionHeader,
-  CustomControlItem,
   DEFAULT_SORT_SERIES_DATA,
   SORT_SERIES_CHOICES,
   sharedControls,
