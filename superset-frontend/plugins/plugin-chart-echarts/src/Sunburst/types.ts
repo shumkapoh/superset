@@ -38,6 +38,7 @@ export type EchartsSunburstFormData = QueryFormData & {
   secondaryMetric?: QueryFormMetric;
   colorScheme?: string;
   linearColorScheme?: string;
+  fontSize?: number;
 };
 
 export enum EchartsSunburstLabelType {
@@ -52,6 +53,7 @@ export const DEFAULT_FORM_DATA: Partial<EchartsSunburstFormData> = {
   labelType: EchartsSunburstLabelType.Key,
   showLabels: false,
   dateFormat: 'smart_date',
+  fontSize: 12,
 };
 
 export interface EchartsSunburstChartProps

@@ -74,6 +74,7 @@ export default function transformProps(
     nodeLabelPosition,
     childLabelPosition,
     emphasis,
+    fontSize,
   }: EchartsTreeFormData = { ...DEFAULT_FORM_DATA, ...formData };
   const metricLabel = getMetricLabel(metric);
 
@@ -189,6 +190,7 @@ export default function transformProps(
       label: {
         ...DEFAULT_TREE_SERIES_OPTION.label,
         position: nodeLabelPosition,
+        fontSize,
       },
       emphasis: { focus: emphasis },
       animation: DEFAULT_TREE_SERIES_OPTION.animation,
@@ -217,6 +219,7 @@ export default function transformProps(
           metricLabel,
         }),
     },
+    textStyle: { fontSize },
   };
 
   return {

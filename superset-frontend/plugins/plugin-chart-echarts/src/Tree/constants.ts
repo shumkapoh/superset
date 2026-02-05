@@ -43,4 +43,5 @@ export const DEFAULT_FORM_DATA: Partial<EchartsTreeFormData> = {
   nodeLabelPosition: 'left',
   childLabelPosition: 'bottom',
   emphasis: 'descendant',
+  fontSize: 12,
 };

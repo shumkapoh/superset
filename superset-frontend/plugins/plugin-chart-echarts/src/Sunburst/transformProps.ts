@@ -187,6 +187,7 @@ export default function transformProps(
     showLabelsThreshold,
     showTotal,
     sliceId,
+    fontSize,
   } = formData;
   const {
     currencyFormats = {},
@@ -374,12 +375,13 @@ export default function transformProps(
           left: 'center',
           style: {
             text: t('Total: %s', primaryValueFormatter(totalValue)),
-            fontSize: 16,
+            fontSize,
             fontWeight: 'bold',
           },
           z: 10,
         }
       : null,
+    textStyle: { fontSize },
   };
 
   return {

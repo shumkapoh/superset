@@ -23,6 +23,7 @@ import {
   getStandardizedControls,
   sharedControls,
 } from '@superset-ui/chart-controls';
+import { fontSizeControl } from '../controls';
 import { DEFAULT_FORM_DATA } from './constants';
 
 const requiredEntity = {
@@ -104,6 +105,7 @@ const controlPanel: ControlPanelConfig = {
       label: t('Chart options'),
       expanded: true,
       controlSetRows: [
+        [fontSizeControl],
         [<ControlSubSectionHeader>{t('Layout')}</ControlSubSectionHeader>],
         [
           {

@@ -43,7 +43,6 @@ import {
   COLOR_SATURATION,
   BORDER_WIDTH,
   GAP_WIDTH,
-  LABEL_FONTSIZE,
   extractTreePathInfo,
   BORDER_COLOR,
 } from './constants';
@@ -138,6 +137,7 @@ export default function transformProps(
     showUpperLabels,
     dashboardId,
     sliceId,
+    fontSize,
   }: EchartsTreemapFormData = {
     ...DEFAULT_TREEMAP_FORM_DATA,
     ...formData,
@@ -265,13 +265,13 @@ export default function transformProps(
         position: labelPosition,
         formatter,
         color: theme.colors.grayscale.dark2,
-        fontSize: LABEL_FONTSIZE,
+        fontSize,
       },
       upperLabel: {
         show: showUpperLabels,
         formatter,
         textBorderColor: 'transparent',
-        fontSize: LABEL_FONTSIZE,
+        fontSize,
       },
       data: transformedData,
     },

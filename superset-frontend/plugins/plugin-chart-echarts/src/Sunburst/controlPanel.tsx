@@ -27,6 +27,7 @@ import {
   D3_TIME_FORMAT_OPTIONS,
   getStandardizedControls,
 } from '@superset-ui/chart-controls';
+import { fontSizeControl } from '../controls';
 import { DEFAULT_FORM_DATA } from './types';
 
 const { labelType, numberFormat, showLabels } = DEFAULT_FORM_DATA;
@@ -51,6 +52,7 @@ const config: ControlPanelConfig = {
       controlSetRows: [
         ['color_scheme'],
         ['linear_color_scheme'],
+        [fontSizeControl],
         [<ControlSubSectionHeader>{t('Labels')}</ControlSubSectionHeader>],
         [
           {
